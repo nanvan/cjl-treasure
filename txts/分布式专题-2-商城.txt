@@ -1,0 +1,8 @@
+远程过程调用协议RPC（Remote Procedure Call Protocol),(跨工程调用接口之类的)
+Thymeleaf  (百里香)基于Java的XML/XHTML/HTML5模板引擎
+
+项目上面的com.xx.xxx是逻辑结构,下面的src里的是物理结构
+
+CMS是"Content Management System"的缩写，意为"内容管理系统".
+
+FreeMarker是一款模板引擎： 即一种基于模板和要改变的数据，	并用来生成输出文本（HTML网页、电子邮件、配置文件、源代码等）的通用工具。	它不是面向最终用户的，而是一个Java类库，是一款程序员可以嵌入他们所开发产品的组件。

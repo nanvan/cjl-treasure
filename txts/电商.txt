@@ -1,0 +1,7 @@
+序列化:将对象(的状态信息) 转换成 字符串或二进制数据(可以存储或传输的形式) 的过程
+
+反序列化:将字符串或二进制数据 转换成 (如java)对象
+
+@RestController = @Controller + @ResponseBody(将Controller方法的返回值转换成json对象)
+
+jackson:将json数据绑定到java对象中

@@ -1,0 +1,53 @@
+﻿Linux系统安装分配磁盘时boot至少200mb,swap至少1024mb,剩下都给/
+
+Linux系统中一切都是文件(目录树)
+有无后缀不能判断目录与文件,用-,d辨别(directory目录)
+shell有图形化(windows的图形化界面即explorer.exe进程),字符2种类型
+
+Linux与windows的dos命令不同,区分大小写
+
+命令:(/根目录)(~用户目录)
+vi进入vim编辑
+vim编辑器的保存退出1.:x 2.:wq, 退出不保存 :q!
+查看某个命令的帮助:ll --help
+搜索帮助grep --help
+切换工作路径
+    1)返回上一级:cd ..
+    2)命令切换到当前用户的家目录 cd ~
+    3)切换到其他用户的家目录 cd ~username
+    4)切换到上一次的目录 cd -
+1.增
+    1)创建文件 touch 或修改文件时间 -a 读取时间 -m 修改时间 -d 都修改
+                      touch -d "2019-04-01 12:01" abc.txt
+    2)创建目录 mkdir 创建嵌套叠层关系的文件目录 mkdir -p aa/bb/cc
+2.删
+    1)rm -r abc 删除目录
+    2)rm -rf abc.txt 强制删除(不询问)
+    3)
+3.查
+    1)查看文件 ll,ls (加 -a 查看全部文件,即包括隐藏的)    不是11
+    2)纯文本文件内容查看 cat(内容较少,加 -n 显示行号),more(多)
+    3)显示用户当前所处的工作目录 pwd (系统管理员的家目录 /root)
+    4)ls -hl 查看文件大小 ll -h
+    5)jps查看java进程,kill [端口号]可以结束进程
+    6)查看进程 top
+    7)vi编辑器到最后一行 G
+    8)ps aux | grep node 查看[node]进程
+4.改
+    1)剪切或重命名 mv
+5.重点*tar
+    1)归档 tar -cf a.tar[袋子] 1.txt 2.java[树枝s]
+    2)压缩
+    3)*解压缩 
+    4)解压rpm文件  rpm -ivh jdk-8u202-linux-x64.rpm 
+6.history命令用于显示历史执行过的命令,[!数字]执行命令,history -c清除历史记录
+7.复制文件 cp
+     1)复制文件夹时:cp -R 文件 文件
+
+
+虚拟机的IP:192.168.162.10,网关,DNS:192.168.162.2
+破解SecureCRT:
+1.安装注册机
+2.
+
+单词学习:Terminal终端,scheme方案,

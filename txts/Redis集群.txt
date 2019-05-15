@@ -1,0 +1,11 @@
+Redis Cluster(集群)
+	最小集群:3主(master)3从<奴隶(slave)>
+
+redis[主从]通过[二进制]协议进行通信
+redis[主从]slave只能get不能增删改
+redis只给[主]master分配槽,[从]只做备份没有槽
+
+redis分布式缓存时:
+	不能保证[强一致性],因为[主从]是异步同步数据的
+	master刚收到token直接返回给客户端成功信息,
+	然后有一个网络get请求进来,但是slave还未同步,会出现一个数据丢失的问题.

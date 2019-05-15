@@ -1,0 +1,36 @@
+﻿git:分布式的版本库,svn集中式的
+msysgit
+tortoiseGit乌龟(https://tortoisegit.org/),封装linux指令
+Git Base Here相当于linux的XShell(壳)
+
+Git最重要的一个概念：暂存区(又称stage,index,即修改后未commit的文件)。
+
+egit使用1.share project 2.加入暂存区add to index 3.commit提交到本地分支
+        4.将项目推送到远程版本库
+commit按钮只能提交整个项目,commit and push按钮可以push单个文件
+
+git:版本库(server)->版本库(user)得一样才能push,pull
+
+大push小
+
+在git客户端删除了文件需要在另一个分支再去合并
+
+git的ssh(Secure Shell)安全协议可以免密钥登录,cmd->dos命令
+
+说简单一点，HEAD 就是当前活跃分支的游标。
+形象的记忆就是：你现在在哪儿，HEAD 就指向哪儿，所以 Git 才知道你在那儿！
+
+当git push时遇到冲突conflict(即两个人同时修改一个文件)
+这时只能选择用其中一个,可以使用乌龟的文本合并工具(TortoiseGitMerge)
+
+Git Create时,作为客户端不勾选(make it bare使它裸露),只在服务端显示.git文件夹
+
+1.新人来:git-clone
+2.先拉pull 服务器origin
+3.修改之后推push
+
+branch分支,remote远程,integrate整合,merge合并
+
+装逼:无论什么样的问题,都可以通过增加一层来解决
+
+122357439@qq.com

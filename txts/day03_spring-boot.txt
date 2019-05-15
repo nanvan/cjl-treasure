@@ -1,0 +1,42 @@
+﻿spring-boot
+1.cmd到demo项目目录下:mvn package
+(这个时候出现了一个error,
+在读maven下的junit测试文件Maven\repository\junit\junit\4.12\junit-4.12.jar
+时错误,删掉再来一遍就好)
+2.到target目录:java -jar xxx.jar
+
+maven配置:
+Preferences搜索maven
+1.Installations,Add目录
+2.User Setting->User Settings(open file)->导入conf下的settings.xml
+
+spring-boot-starter是所有依赖包的集成(这样就不需要自己一个一个的导相关依赖包了)
+汤姆噬元兽官网:https://tomcat.apache.org
+spring-boot自带了tomcat8服务器
+tomcat,jetty : java的web容器
+
+sts , spring插件
+
+eclipse默认编译器在jdk中的ecj.jar
+
+spring配置的单例bean在提供服务时不能执行热加载(先销毁再创建,用户会挂掉)
+
+spring-boot中不需要配置视图解析器,处理器映射器,处理器适配器
+spring-boot-starter是所有依赖包的集成
+maven中的依赖scope:provided表示只在开发时提供,
+发布时不需要打包(因为tomcat的lib中有)
+
+打开eclipse
+第一步:字符及编码utf8
+第二步:Preferences搜索jre确定jdk目录
+要改jsp编码Preferences搜索jsp
+
+javac sb.java编译成class,java sb执行(文件的编码不能是utf-8)
+
+cmd:cd .. 返回上一级
+cmd:按Tab键可以补全目录下的文件名
+找不到jdk路径看环境变量
+metadata元数据(描述数据的信息,比如eclipse工作空间中的.metadata
+记录了你的eclipse字体主题等配置),
+snapshot快照(较新的版本),M1里程碑
+有了jdk便可开发java

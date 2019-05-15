@@ -1,0 +1,8 @@
+解决QQ的多系统(腾讯视频,qq邮箱等)登录问题: 
+	用单点登录: SSO(Single Sign On)
+		实现方式: 1.基于CAS 2.基于TOKEN*(令牌)
+
+public @ResponseBody Object login(){}     ------->>>     
+	@ResponseBody这样返回的不是页面,是一个json格式的字符串
+
+CORS:当端口号(域名)不同时,被请求的微服务需要写跨域请求配置

@@ -1,0 +1,9 @@
+node.js类似于java的jdk,她是js的运行环境(是从Chrome浏览器中提取出来的)
+npm(node package manager)
+vue cli:Vue的开发工具,cmd里的指令npm install -g @vue/cli
+单词:hook钩子,release发布版,plugin插件
+版本version:2(主版本).6(副,次版本).6(改进,修复bug,维护次数)
+类似于bootstrap的框架iview在vue cli3之后有内置
+cmd中vue ui 打开vue项目图形界面
+webpack是vue的幕后工作者
+iview-admin在github上

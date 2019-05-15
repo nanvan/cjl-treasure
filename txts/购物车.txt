@@ -1,0 +1,4 @@
+HTTP是无状态(Stateless)的,但可以用session保存一些信息
+
+Cookie:
+F12->Application->cookies(存在本地硬盘)的值不能存汉字所以汉字被编码了

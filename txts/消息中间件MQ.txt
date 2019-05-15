@@ -1,0 +1,9 @@
+apache的rocketMQ
+
+linux:
+	~当前用户的家
+	jps查看进程
+
+OOM错误:out of memory, 内存溢出
+
+服务中间件:Eureka

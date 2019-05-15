@@ -1,0 +1,15 @@
+图片文件:
+	二进制格式,容量小,很多,零碎
+
+fastdfs,github-YuQing
+FastDFS是一个开源的轻量级分布式文件系统，它对文件进行管理，功能包括：文件存储、文件同步、文件访问（文件上传、文件下载）等，解决了大容量存储和负载均衡的问题。特别适合以文件为载体的在线服务，如相册网站、视频网站等等。
+
+wget,linux里可以用来下载东西的软件,安装:yum install wget -y(默认询问时为yes)
+
+src放源码的文件夹,bin放可执行文件的文件夹,lib(library)库
+nginx牛逼的web服务器
+
+linux系统的make命令相当于maven的npm, Makefile文件相当于maven的pom.xml
+
+client[计算机]客户端
+

@@ -1,0 +1,17 @@
+js的undefined:js是解释型语言,通过后面的值反推出变量类型
+ECMAScript6中:let只在代码块中(如:一个{}中)有效,var是全局的
+Vue{
+1.页面上F12控制台响应式解析
+2.声明式(就像spring写配置文件,就不需要再写代码)渲染
+3.v-bind:title,v-for,v-if,v-else,v-else-if,
+4.Vue.component('自定义标签(元素)名',{template:'')注册组件:
+    组件是可复用的 Vue 实例,所以它们与 new Vue 接收相同的选项，
+例如 data、computed、watch、methods 以及生命周期钩子等,
+仅有的例外是像 el这样根实例特有的选项。
+    每个组件必须只有一个根元素.
+5.组件的父属性props用v-bind:props名字
+6.v-on:click绑定单击事件可以简写成@click   v-bind可以简写成:
+}
+template模板,dynamic动态
+MVVM(model-view-viewmodel)设计思想,viewmodel就是Vue对象
+利用``可以在js里正常写html代码

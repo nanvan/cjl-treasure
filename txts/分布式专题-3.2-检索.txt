@@ -1,0 +1,6 @@
+Elasticsearch将数据存在内存(NoSQL:Not Only SQL)
+Mysql将数据存在硬盘(SQL)
+前者检索速度更快,但更耗内存.
+
+装逼------初级:java面向对象编程,中级:java面向接口编程,java面向服务编程SOA
+装逼------

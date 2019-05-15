@@ -1,0 +1,288 @@
+GET _search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /_cat/nodes?v
+
+GET /_cat/indices?v
+
+#pretty格式化显示
+
+PUT /customer/_doc/1?pretty
+{
+  "name":"歐陽南文"
+}
+
+GET /customer/_doc/1?pretty
+
+DELETE /customer?pretty
+
+GET /_cat/indices?v
+
+PUT /customer/_doc/1?pretty
+{
+  "name":"蔡徐鯤"
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "doc":{ "name": "我的小可爱" }
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "doc":{"name":"你的小可爱","age":4396}
+}
+
+POST /customer/_doc/1/_update?pretty
+{
+  "script" : "ctx._source.age += 3"
+}
+
+POST /customer/_doc/_bulk?pretty
+{"index":{"_id":"1"}}
+{"name": "John Doe" }
+{"index":{"_id":"2"}}
+{"name": "Jane Doe" }
+
+POST /customer/_doc/_bulk?pretty
+{"update":{"_id":"1"}}
+{"doc": { "name": "John Doe becomes Jane Doe" } }
+{"delete":{"_id":"2"}}
+
+DELETE /customer/_doc/1?pretty
+
+GET /bank/_search?q=*&sort=account_number:asc&pretty
+
+#-----------------DSL-------------------
+
+#查询所有match_all
+#每页显示条数:size,
+#从第几条数据开始:from
+GET /bank/_search
+{
+  "query":{"match_all": {}},
+  "size":5,
+  "from":996,
+  "sort": [
+    { "account_number": "asc" }
+  ]
+}
+
+#排序sort
+GET /bank/_search
+{
+  "query": { "match_all": {} },
+  "sort": {"balance": {"order":"desc"}}
+}
+
+#余额balance
+#结果过滤,只返回指定字段
+GET /bank/_search
+{
+  "query": { "match_all": {} },
+  "_source": ["account_number", "balance"]
+}
+
+#匹配查询int
+#查询指定用户
+GET /bank/_search
+{
+  "query": { "match": { "account_number": 999 } }
+}
+
+#模糊查询String
+GET /bank/_search
+{
+  "query": 
+  { "match":
+    { "address": "mill 蔡徐鲲 street" } }
+}
+
+#短语查询String
+GET /bank/_search
+{
+  "query": { 
+    "match_phrase": 
+      { "address": "mill lane" } 
+  }
+}
+
+#-----------bool----------逻辑查询
+#必须包含A与B当中的某一段字符串
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "address": "mill的" } },
+        { "match": { "address": "啊lane" } }
+      ]
+    }
+  }
+}
+
+#包含A或B当中的某一段字符串
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "should": [
+        { "match": { "address": "的mill" } },
+        { "match": { "address": "l啊ane" } }
+      ]
+    }
+  }
+}
+
+#逻辑非
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must_not": [
+        { "match": { "address": "mill" } },
+        { "match": { "address": "lane" } }
+      ]
+    }
+  }
+}
+
+#查询所有40岁不在“ID”州的账户信息
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "match": { "age": "40" } }
+      ],
+      "must_not": [
+        { "match": { "state": "ID" } }
+      ]
+    }
+  }
+}
+
+#filter拦截
+GET /bank/_search
+{
+  "query": {
+    "bool": {
+      "must": { "match_all": {} },
+      "filter": {
+        "range": {
+          "balance": {
+            "gte": 20000,
+            "lte": 30000
+          }
+        }
+      }
+    }
+  }
+}
+
+#----------aggs-------------聚合查询
+#group_by_state自定义组名,field域
+#doc_count计数几条
+#terms关键字
+GET /bank/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword"
+      }
+    }
+  }
+}
+
+#avg关键字
+#聚中组中聚
+GET /bank/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword"
+      },
+      "aggs": {
+        "average_balance": {
+          "avg": {
+            "field": "balance"
+          }
+        }
+      }
+    }
+  }
+}
+
+#order关键字
+#按"余额balance"降序排序
+GET /bank/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_state": {
+      "terms": {
+        "field": "state.keyword",
+        "order": {
+          "average_balance": "desc"
+        }
+      },
+      "aggs": {
+        "average_balance": {
+          "avg": {
+            "field": "balance"
+          }
+        }
+      }
+    }
+  }
+}
+
+#range关键字
+#查询不同年龄段中男性女性的平均收入
+GET /bank/_search
+{
+  "size": 0,
+  "aggs": {
+    "group_by_age": {
+      "range": {
+        "field": "age",
+        "ranges": [
+          {
+            "from": 20,
+            "to": 30
+          },
+          {
+            "from": 30,
+            "to": 40
+          },
+          {
+            "from": 40,
+            "to": 50
+          }
+        ]
+      },
+      "aggs": {
+        "group_by_gender": {
+          "terms": {
+            "field": "gender.keyword"
+          },
+          "aggs": {
+            "average_balance": {
+              "avg": {
+                "field": "balance"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

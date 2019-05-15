@@ -1,0 +1,17 @@
+spring-boot的原理实质就是spring配置
+
+*spring配置三种方式:
+1.xml
+2.@注解
+3.java类配置(还需要在类上方加上注解@Configuration)
+
+@RestController设计风格(如查询用get请求,修改put请求,添加post请求,删除delete请求)
+
+启动项目Run As Maven build:
+spring-boot:run,勾上skip tests
+
+接口数据测试工具:postman
+
+前端解决跨域:jsonp,把数据放在js文件里
+后端解决跨域:CORS(Cross-Origin  Sharing)
+跨域(域名+端口号(8080,8888))请求(www.baidu.com -> www.jd.com)

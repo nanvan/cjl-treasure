@@ -1,0 +1,40 @@
+﻿Rest风格,api路径一样,根据请求方式post加,put改,get等区别
+
+注意注意!!!
+坑1:
+spring-boot的maven的插件有个坑
+子工程在repackage时会失败,因为子工程继承父工程会扫描里面的包,
+解决:在子工程中(<plugin><configuration><skip>)
+
+坑2:
+xxx.xml is notBound (在单元测试时maven不会打包,运行时会打包所以会报错)
+
+*注意!,Mybatis默认只能传一个参数
+
+电子商务营销模式:
+B2C(Business-to-Customer):京东,天猫
+B2B(Business-to-Business):阿里巴巴
+C2C(Customer-to-Customer):淘宝
+O2O(Online-to-Offline):美团(线上获取信息,线下享受服务)
+
+CORS跨域请求会请求两次
+
+@RequestBody : 给页面传json数据   F12->Network->Headers->Request Payload
+@RequestParam  F12->Network->Headers->Query String Parameters
+
+分布式(服务化s)
+
+平台(别的商家也可以上去注册卖东西,不只是个个人网站)
+
+集群不算分布式
+
+敏捷开发:快速迭代(一部分开发,直接测试,直接发布)
+
+module模块
+
+服务层的web(springMVC):http+json
+前端页面控制web
+
+简单日志框架simple-log-frame:log4j-to-slf4j.jar(spring-boot已集成)
+
+1.maven project

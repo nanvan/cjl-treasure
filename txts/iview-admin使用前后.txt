@@ -1,0 +1,22 @@
+1.node.js开发环境(也是服务器)
+    中文版文档：https://nodejs.org/zh-cn/docs/
+    下载,安装:https://nodejs.org/en/
+    终端查看版本:node -v
+    webpack的配置在vue的开发工具集成了
+
+2.Vue CLI,vue开发工具
+    终端安装:npm install -g @vue/cli
+
+3.Iview(是Vue CLI 3的插件)
+    网址:https://www.iviewui.com/docs/guide/start
+    打开Vue图形界面,终端:vue ui 然后要安装vue-cli-plugin-iview插件
+    启动项目,终端到项目目录:npm run serve
+
+4.Iview-admin(开发后台管理系统的开源前端模板工程)
+    git网址:https://github.com/iview/iview-admin
+    看项目里的README.md(Install,Run)
+    启动项目:npm run dev
+
+前端开发三大武器：nodejs + npm + webpack
+Vue.js官网:https://cn.vuejs.org/v2/guide/index.html
+vue.js下载:https://vuejs.org/js/vue.js
